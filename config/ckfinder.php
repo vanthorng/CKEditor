@@ -26,6 +26,10 @@ $config['loadRoutes'] = true;
 
 $config['authentication'] = '\CKSource\CKFinderBridge\CKFinderMiddleware';
 
+$config['authentication'] = function() {
+    return true;
+};
+
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
@@ -94,14 +98,14 @@ $config['backends']['default'] = array(
 
 $config['defaultResourceTypes'] = '';
 
-$config['resourceTypes'][] = array(
-    'name'              => 'Files', // Single quotes not allowed.
-    'directory'         => 'files',
-    'maxSize'           => 0,
-    'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
-    'deniedExtensions'  => '',
-    'backend'           => 'default'
-);
+    $config['resourceTypes'][] = array(
+        'name'              => 'Files', // Single quotes not allowed.
+        'directory'         => 'files',
+        'maxSize'           => 0,
+        'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
+        'deniedExtensions'  => '',
+        'backend'           => 'default',
+    );
 
 $config['resourceTypes'][] = array(
     'name'              => 'Images',
