@@ -13,7 +13,7 @@ CKFinder.define( [ 'marionette' ], function( Marionette ) {
 		init: function( finder ) {
 			finder.on( 'contextMenu:file:view', function( evt ) {
 				evt.data.items.add( {
-					label: 'Show URL',
+					label: 'Showing',
 					isActive: evt.data.context.file.get( 'folder' ).get( 'acl' ).fileView,
 					icon: 'ckf-view',
 					action: function() {
@@ -39,6 +39,8 @@ CKFinder.define( [ 'marionette' ], function( Marionette ) {
 
 			// Update the file's Doc_code when the file is edited.
 			finder.on( 'listView:file:edit', this.onFileEdit );
+
+		
 		},
 
 		/**
@@ -92,8 +94,13 @@ CKFinder.define( [ 'marionette' ], function( Marionette ) {
 			}
 
 			return docCode;
-		}
+		},
+	
 	};
+
+
+	
+
 
 	return DocCodePlugin;
 } );

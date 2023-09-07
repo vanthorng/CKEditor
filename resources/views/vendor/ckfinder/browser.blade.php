@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<!--
-Copyright (c) 2007-2018, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or https://ckeditor.com/sales/license/ckfinder
--->
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <title>CKFinder 3 - File Browser</title>
-</head>
-<body>
+<x-app-layout>
+    <div class="pt-20 right-10 text-white bg-slate-600 text-right">
 
-@include('ckfinder::setup')
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <x-nav-link :href="route('logout')"   onclick="event.preventDefault();
+            this.closest('form').submit();">
+                {{ __('logout') }}
+            </x-nav-link>
 
-<script>
-	CKFinder.start();
-</script>
-
-</body>
-</html>
-
+        </form>
+    </div>
+    @include('ckfinder::setup')
+    <script>
+        CKFinder.start();
+    </script>
+</x-app-layout>

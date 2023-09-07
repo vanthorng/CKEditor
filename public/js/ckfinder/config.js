@@ -6,11 +6,12 @@
 var config = {};
 
 // Set your configuration options below.
-  // The names of the plugins that CKFinder should load.
-  config.plugins= ['MyPlugin', //'FileManager'
-],
-// Examples:
-// config.language = 'pl';
-// config.skin = 'jquery-mobile';
+// The names of the plugins that CKFinder should load.
+(config.plugins = [
+    "MyPlugin","Setting" //'FileManager'
+]),
+    // Examples:
+    // config.language = 'pl';
+    // config.skin = 'jquery-mobile';
 
-CKFinder.define( config );
+    CKFinder.define(config);
